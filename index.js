@@ -29,3 +29,4 @@ const lowerCase = (letter) => {
 }
 }
 };
+console.log(lowerCase);
