@@ -10,9 +10,6 @@ const answerSpace = [];
 for (let index = 0; index < randomWord.length; index++) {
       answerSpace[index] = "_";
 }
-//console.log(answerSpace);
-
-//const endDisppay = false;
 
 const startGame = (wordLetters, wrongGuesses) => {
     while (wordLetters > 0 && wrongGuesses > 0) {
@@ -30,34 +27,17 @@ const startGame = (wordLetters, wrongGuesses) => {
     } 
 } 
 if (wordLetters === 0 || wrongGuesses === 0) {
-    const lossGame = (wrongGuesses) => { 
             if (wrongGuesses === 0) {
                 console.log("You Loose! The answer was " + randomWord);
             }
-            };
-            const winGame = (wordLetters) => {
             if (wordLetters === 0) {
               console.log("You Win! The answer was " + randomWord);
             }
-            };
 }
 };
 startGame(randomWord.length, 6);
 
-// const displayIfWon = () => {
-//     if hasWon () {
-//         console.log("You Win! The answer was " + randomWord); 
-//     } else
-//         console.log("You Loose! The answer was " + randomWord);
-// };
 
-// const endDisppay = (wordLetters, wrongGuesses) => {
-//     if (wordLetters === 0) {
-//               console.log("You Win! The answer was " + randomWord);
-//             } if (wrongGuesses === 0) {
-//                 console.log("You Loose! The answer was " + randomWord);
-//             }
-// }
 // const lossGame = (wrong) => { 
 //     if (wrong === 0) {
 //         console.log("You Loose! The answer was " + randomWord);
