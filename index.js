@@ -12,12 +12,14 @@ for (let index = 0; index < randomWord.length; index++) {
 }
 //console.log(answerSpace);
 
+//const endDisppay = false;
+
 const startGame = (wordLetters, wrongGuesses) => {
     while (wordLetters > 0 && wrongGuesses > 0) {
     console.log(answerSpace.join(" "));
-    const letter = prompt.question("Please guess a letter: ");
+    let letter = prompt.question("Please guess a letter: ");
+    letter = letter.toLowerCase();
     if (letter.length === 1) {
-    letter.toLowerCase();
     for (let i = 0; i < randomWord.length; i++) {
                if (randomWord[i] === letter && answerSpace[i] === "_") {
                    answerSpace[i] = letter;
@@ -26,10 +28,36 @@ const startGame = (wordLetters, wrongGuesses) => {
     }
     wrongGuesses--;
     } 
+} 
+if (wordLetters === 0 || wrongGuesses === 0) {
+    const lossGame = (wrongGuesses) => { 
+            if (wrongGuesses === 0) {
+                console.log("You Loose! The answer was " + randomWord);
+            }
+            };
+            const winGame = (wordLetters) => {
+            if (wordLetters === 0) {
+              console.log("You Win! The answer was " + randomWord);
+            }
+            };
 }
 };
 startGame(randomWord.length, 6);
 
+// const displayIfWon = () => {
+//     if hasWon () {
+//         console.log("You Win! The answer was " + randomWord); 
+//     } else
+//         console.log("You Loose! The answer was " + randomWord);
+// };
+
+// const endDisppay = (wordLetters, wrongGuesses) => {
+//     if (wordLetters === 0) {
+//               console.log("You Win! The answer was " + randomWord);
+//             } if (wrongGuesses === 0) {
+//                 console.log("You Loose! The answer was " + randomWord);
+//             }
+// }
 // const lossGame = (wrong) => { 
 //     if (wrong === 0) {
 //         console.log("You Loose! The answer was " + randomWord);
