@@ -27,26 +27,18 @@ const startGame = (wordLetters, wrongGuesses) => {
     } 
 } 
 if (wordLetters === 0 || wrongGuesses === 0) {
-            if (wrongGuesses === 0) {
-                console.log("You Loose! The answer was " + randomWord);
-            }
-            if (wordLetters === 0) {
-              console.log("You Win! The answer was " + randomWord);
-            }
+            const lossGame = (wrong) => { 
+                if (wrong === 0) {
+                    console.log("You Loose! The answer was " + randomWord);
+                }
+                };
+                const winGame = (correct) => {
+                if (correct === 0) {
+                  console.log("You Win! The answer was " + randomWord);
+                }
+                };
+                lossGame(wrongGuesses); 
+                winGame(wordLetters);             
 }
 };
 startGame(randomWord.length, 6);
-
-
-// const lossGame = (wrong) => { 
-//     if (wrong === 0) {
-//         console.log("You Loose! The answer was " + randomWord);
-//     }
-//     };
-//     lossGame(wrongGuesses); 
-//     const winGame = (correct) => {
-//     if (correct === 0) {
-//       console.log("You Win! The answer was " + randomWord);
-//     }
-//     };
-//     winGame(wordLetters);
