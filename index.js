@@ -22,14 +22,15 @@ const startGame = (wordLetters, wrongGuesses) => {
     for (let i = 0; i < randomWord.length; i++) {
                if (randomWord[i] === letter && answerSpace[i] === "_") {
                    answerSpace[i] = letter;
+                   wordLetters--;
                    console.log(`Right Guesses Left: ${wordLetters}`);
-                    wordLetters--;
+                    
     }
     } 
     if (wordLetters === wordLetters) {
-    console.log(`Wrong Guesses Left: ${wrongGuesses}`);
-    wrongGuesses--;
-    }
+        wrongGuesses--;
+        console.log(`Wrong Guesses Left: ${wrongGuesses}`);
+        }
     }
 } 
 //Closes While Loop to End Game
