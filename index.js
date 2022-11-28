@@ -16,13 +16,16 @@ const startGame = (wordLetters, wrongGuesses) => {
     console.log(answerSpace.join(" "));
     let letter = prompt.question("Please guess a letter: ");
     letter = letter.toLowerCase();
+
     if (letter.length === 1) {
     for (let i = 0; i < randomWord.length; i++) {
                if (randomWord[i] === letter && answerSpace[i] === "_") {
                    answerSpace[i] = letter;
-    wordLetters--;
+                   console.log(`Right Guesses Left: ${wordLetters}`);
+                    wordLetters--;
     }
     }
+    console.log(`Wrong Guesses Left: ${wrongGuesses}`);
     wrongGuesses--;
     } 
 } 
